@@ -60,7 +60,7 @@
   var areaSelect = document.getElementById('street');
   var rangeColor = [
       '#dd0000',
-      '#FFFF00',
+      '#FFaa00',
       '#33FF33',
       '#FF00FF',
       '#3300FF'
@@ -263,7 +263,7 @@
             var lon = parseFloat(p['lon']);
             var lat = parseFloat(p['lat']);
             var range = parseInt(p['range']);
-            var colorIndex = range/1000;
+            var colorIndex = range/1000-1;
             if (colorIndex>=rangeColor.length) {
               colorIndex = rangeColor.length-1;
             } else if (colorIndex <0) {
