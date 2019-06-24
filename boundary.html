@@ -59,9 +59,10 @@
   var districtSelect = document.getElementById('district');
   var areaSelect = document.getElementById('street');
   var rangeColor = [
-      '#dd0000',
+      // '#dd0000',
       '#FFaa00',
-      '#33FF33',
+      '#337733',
+      '#33FFff',
       '#FF00FF',
       '#3300FF'
   ];
@@ -281,9 +282,10 @@
             var circle = new AMap.Circle({
               center: [lon, lat],
               radius: range, //半径
-              fillOpacity: 0.4,
+              fillOpacity: 0.7,
               strokeOpacity: 0,
-              fillColor: rangeColor[colorIndex]
+              fillColor: rangeColor[colorIndex],
+                zIndex: -1*colorIndex
             })
             circle.setMap(map);
             overlays.push(dept);
