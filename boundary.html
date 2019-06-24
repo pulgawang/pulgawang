@@ -59,11 +59,11 @@
   var districtSelect = document.getElementById('district');
   var areaSelect = document.getElementById('street');
   var rangeColor = [
-    '#33FF33',
-    '#3300FF',
-    '#FFFF00',
-    '#FF9900',
-    '#990000',
+      '#dd0000',
+      '#FFFF00',
+      '#33FF33',
+      '#FF00FF',
+      '#3300FF'
   ];
 
   map = new AMap.Map('container', {
@@ -236,7 +236,7 @@
 				reader.readAsText(file);
 				reader.onload = function(f) {
 					//					var result = document.getElementById("result");
-					//显示文件  
+					//显示文件
 					var relArr = this.result.split("\n");
 					if(!$.isEmptyObject(relArr) && relArr.length > 1) {
 						for(var key = 1, len = relArr.length; key < len; key++) {
@@ -257,7 +257,7 @@
 						}
 
 					}
-          
+
           for(i = 0; i<data.length; i++){
             p=data[i];
             var lon = parseFloat(p['lon']);
@@ -304,7 +304,7 @@
   for (var i = 0; i < x_total + 1; i++) {
     for (var j = 0; j < y_total + 1; j++) {
       let point = southWest.offset(km * i, -km * j)
-    
+
       var bounds2 = new AMap.Bounds(southWest, point)
       var rectangle2 = new AMap.Rectangle({
         bounds: bounds2,
@@ -346,7 +346,7 @@ document.onkeydown = function (event) {
 //     return a[1] > b[1]
 //   });
 //   //左上角像素坐标
-//   var min = [xAsc[0][0], yAsc[0][1]]    
+//   var min = [xAsc[0][0], yAsc[0][1]]
 //   //右下角像素坐标
 //   var max = [xAsc[xAsc.length - 1][0], yAsc[yAsc.length - 1][1]]
 //   //从canvas中获得图像方法需要4个参数。起点的x y轴, width, height。 +20为了不让生成的图片都贴这边
